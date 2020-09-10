@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!-- font awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    /> -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
+    <!-- Uncompressed jQuery -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" href="styleind.css" />
+
+    <!-- Chart.js (Working CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <script src="indscript.js"></script>
+    
+    <title>CoViD-19 Live Results | India</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="Images/FavCovid.png" type="image/x-icon" sizes="">
+  </head>
+  <body>
+
+    <div class="topnav" id="myTopnav">
+        <a class="navbar-brand" href="">CoViD-19</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="globalstats.html" class="nav-link">Country Wise Results</a>
+        <a href="globchart.html" class="nav-link">Graphical Stats</a>
+        <a href="india.html" class="nav-link">India's Stats</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+    <div class="container bg-light text-center" id="coheading">
+      <div class="row">
+        <img class="text-center" src="/Images/cov.jpg" alt="COVID-19" srcset="" >
+        <h1 class="text-center mt-5"><span class="rainbow" >COVID-19</span> Live Tracker India</h1>
+      </div>
+      <hr>
+    </div>
+
+    <!-- Total number of confirmed and all the other info -->
+    <div class="container cont ">
+      <div class="row text-center">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <h3 class="one">Total Confirmed</h3>
+          <p id="confirmed"></p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <h3 class="four">Total Active</h3>
+          <p id="active"></p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <h3 class="three">Total Recovered</h3>
+          <p id="recovered"></p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <h3 class="two">Total Deceased</h3>
+          <p id="deaths"></p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Quote -->
+    <div class="container bg-light p-3 my-5 text-center col-lg-12 col-sm-12">
+      <h4 class="text-info">"Remember, Prevention is the Cure."</h4>
+      <p class="text-muted">Stay Indoors and Stay Safe.</p>
+    </div>
+
+    <!-- Used by Chart.js -->
+    <canvas id="myChartjs"></canvas>
+
+    <!-- Bottom Note -->
+    <div class="container text-center my-5 col-lg-12 col-sm-12">
+      <h5 class="text-info">
+        *Click on the Confirmed/Recovered/Deaths buttons above to see the chart
+        individually.*
+      </h5>
+      <br>
+      <h5 class="text-info">
+        *Hover on the Bars to see the chart-stats individually.*
+      </h5>
+    </div>
+
+<!-- scrolltop button -->
+<button onclick="topFunction()" id="myBtnd" title="Go to top">^</button>
+
+    <hr>
+    <footer>
+        <div class="text-center ">
+            <span class="sp">
+              <a href="https://www.facebook.com/bhav27noorsingh" target="_blank" title="FACEBOOK | Bhavnoor Singh"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/bhav27noor" target="_blank" title="LINKEDIN | Bhavnoor Singh"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/Bhavnoor-Singh98/" target="_blank" title="GITHUB | Bhavnoor Singh"><i class="fab fa-github"></i></a>
+              <a href="https://www.twitter.com/bhav27noor/" target="_blank" title="TWITTER | Bhavnoor Singh"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:bhav27noor@gmail.com" target="_blank" title="Mail Us | bhav27noor@gmail.com"><i class="fas fa-envelope"></i></a>
+            </span>
+            <span>
+              <br>
+              <p class="footer-copyright text-black-50 foo1" >
+                © Bhavnoor Singh 2020. All Rights Reserved.
+              </p>
+              <p class="footer-copyright text-black-50">
+                Made just for providing information related to COVID-19.
+              </p>
+            </span> 
+            
+          </div>
+    </footer>
+  </body>
+</html>
