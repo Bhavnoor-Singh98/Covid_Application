@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+      integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="styleglo.css" />
+
+    <title>CoViD-19 Live Results | Country Wise</title>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="Images/FavCovid.png"
+      type="image/x-icon"
+      sizes=""
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a class="navbar-brand" href="">CoViD-19</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="globalstats.html" class="nav-link">Country Wise Results</a>
+      <a href="globchart.html" class="nav-link">Graphical Stats</a>
+      <a href="india.html" class="nav-link">India's Stats</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <!-- scrolltop button -->
+    <button onclick="topFunction()" id="myBtnd" title="Go to top">^</button>
+
+    <div class="container bg-light text-center" id="coheading">
+      <div class="row">
+        <img
+          class="text-center"
+          src="/Images/cov.jpg"
+          alt="COVID-19"
+          srcset=""
+        />
+        <h1 class="text-center mt-5">
+          <span class="rainbow">COVID-19</span> Country Wise Results
+        </h1>
+      </div>
+      <hr />
+    </div>
+
+    <div class="container-fluid">
+      <!-- <div class="row"> -->
+      <div class="container mt-3 col-lg-6">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="myInput"
+            placeholder="Enter Country Name "
+          />
+          <div class="input-group-append">
+            <button class="btn btn-primary searchcon" type="submit">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="tab">
+        <!-- <div style="overflow-x:auto;"> -->
+        <table class="table table-hover table-name" id="data">
+          <thead class="r1">
+            <th scope="col" class="sno" id="tb">Serial No.</th>
+            <th scope="col" class="colo">Country</th>
+            <th scope="col" class="one">New Cases</th>
+            <th scope="col" class="two">New Deaths</th>
+            <th scope="col" class="three">New Recovered</th>
+            <th scope="col" class="one">Total Cases</th>
+            <th scope="col" class="two">Total Deaths</th>
+            <th scope="col" class="three">Total Recovered</th>
+          </thead>
+        </table>
+      </div>
+      <br />
+
+      <!-- <button onclick="refreshData()" type="button" class="btn btn-info">
+            Refresh 
+        </button> -->
+    </div>
+    <br />
+    <hr />
+    <footer>
+      <div class="text-center">
+        <span class="sp">
+          <a
+            href="https://www.facebook.com/bhav27noorsingh"
+            target="_blank"
+            title="FACEBOOK | Bhavnoor Singh"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/bhav27noor"
+            target="_blank"
+            title="LINKEDIN | Bhavnoor Singh"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/Bhavnoor-Singh98/"
+            target="_blank"
+            title="GITHUB | Bhavnoor Singh"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.twitter.com/bhav27noor/"
+            target="_blank"
+            title="TWITTER | Bhavnoor Singh"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="mailto:bhav27noor@gmail.com"
+            target="_blank"
+            title="Mail Us | bhav27noor@gmail.com"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </span>
+        <span>
+          <br />
+          <p class="footer-copyright text-black-50 foo1">
+            © Bhavnoor Singh 2020. All Rights Reserved.
+          </p>
+          <p class="footer-copyright text-black-50">
+            Made just for providing information related to COVID-19.
+          </p>
+        </span>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="globaljs.js"></script>
+  </body>
+</html>
