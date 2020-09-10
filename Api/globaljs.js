@@ -55,15 +55,7 @@ function init() {
   var url = "https://api.covid19api.com/summary";
 
   $.get(url, function (data) {
-    //   //   var aa=data
-    //   //   var country_name=aa.filter(namee => (namee.CountryCode === "AF"))
-    //  console.log(data.Countries);
-    //  for (let i = 0; i < data.Countries.length; i++) {
-    //    console.log(data.Countries[i]);
-    //  }
-
-    //      var newConfirmed=[];
-    //      var country=[];
+    countries = data.Countries;
     for (i in data.Countries) {
       var country_data = `
            <tr class="countri">
@@ -88,32 +80,9 @@ function functionCountries() {
   var mn = [];
 
   mn = $.get(url, function (data) {
-    //   //   var aa=data
-    //   //   var country_name=aa.filter(namee => (namee.CountryCode === "AF"))
-    //  console.log(data.Countries);
-    //  for (let i = 0; i < data.Countries.length; i++) {
-    //    console.log(data.Countries[i]);
-    //  }
-
-    //      var newConfirmed=[];
-    //      var country=[];
     var country_data = [];
-    countries = data.Countries;
     for (i in data.Countries) {
       country_data[i] = data.Countries[i].Country;
-      //  <tr class="countri">
-      //  <td>${parseInt(i)+1}</td>
-      //  <td>${data.Countries[i].Country}</td>
-      //  <td>${data.Countries[i].NewConfirmed}</td>
-      //  <td>${data.Countries[i].NewDeaths}</td>
-      //  <td>${data.Countries[i].NewRecovered}</td>
-      //  <td>${data.Countries[i].TotalConfirmed}</td>
-      //  <td>${data.Countries[i].TotalDeaths}</td>
-      //  <td>${data.Countries[i].TotalRecovered}</td>
-      //  </tr>
-      // ;
-      // console.log(country_data)
-      // document.getElementById("data").innerHTML+=country_data;
     }
     return country_data;
   });
@@ -123,45 +92,65 @@ function functionCountries() {
 // getting input
 $("#myInput").on("keyup", function () {
   var value = $(this).val();
-  // as you will type you will get your values printed
-  // console.log(value)
 
   var ule = document.getElementById("data");
   // console.log(ule)
-  // var liele = functionCountries();
+  var liele = functionCountries();
   // console.log(liele)
   var data_get = searchTable(value);
-  buildTable(data_get);
+  buildTable1(data_get);
 });
 // console.log(country_data)
 var uleq = document.getElementById("data");
 // console.log(ule)
 var lieleq = uleq.getElementsByClassName("countri");
 // console.log(lieleq)
-buildTable(lieleq);
+// buildTable(lieleq);
 
 // takes value of the input field
 function searchTable(value) {
-  // console.log(data_get);
-  var filteredData = [];
-  console.log(data);
-  for (var i = 0; i < data.Countries.length; i++) {
-    //   var abx;
-    // abx=functionCountries();
-    console.log(data.Countries[i].Country);
+  let filteredData = [];
+  for (var i = 0; i < countries.length; i++) {
     value = value.toLowerCase();
-    var name = data.Countries[i].Country.toLowerCase();
-    console.log(name.substring(0, value.length - 1));
-    // if (name.substring(0, value.length - 1)) {
-    //   filteredData.push(data_get[i]);
-    // }
+    var name = countries[i].Country.toLowerCase();
+    if (name.substring(0, value.length) === value) {
+      filteredData.push(countries[i]);
+    }
   }
-  console.log(filteredData);
   return filteredData;
 }
 
+const buildTable1 = (arr) => {
+  let country_data = `
+    <thead class="r1">
+      <th scope="col" class="sno" id="tb">Serial No.</th>
+      <th scope="col" class="colo">Country</th>
+      <th scope="col" class="one">New Cases</th>
+      <th scope="col" class="two">New Deaths</th>
+      <th scope="col" class="three">New Recovered</th>
+      <th scope="col" class="one">Total Cases</th>
+      <th scope="col" class="two">Total Deaths</th>
+      <th scope="col" class="three">Total Recovered</th>
+    </thead>
+  `;
+  for (let i = 0; i < arr.length; i++) {
+    country_data += `
+      <tr class="countri">
+        <td>${parseInt(i) + 1}</td>
+        <td>${arr[i].Country}</td>
+        <td>${arr[i].NewConfirmed}</td>
+        <td>${arr[i].NewDeaths}</td>
+        <td>${arr[i].NewRecovered}</td>
+        <td>${arr[i].TotalConfirmed}</td>
+        <td>${arr[i].TotalDeaths}</td>
+        <td>${arr[i].TotalRecovered}</td>
+      </tr>
+    `;
+  }
+  document.getElementById("data").innerHTML = country_data;
+};
+
 function buildTable(data_get) {
-  // var table= document.getElementById()
   for (var i = 0; i < data_get.length; i++) {
     var country_data = `
     <tr class="countri">
@@ -175,7 +164,6 @@ function buildTable(data_get) {
     <td>${data.Countries[i].TotalRecovered}</td>
     </tr>
    `;
-    // console.log(country_data)
     document.getElementById("data").innerHTML += country_data;
   }
 }
